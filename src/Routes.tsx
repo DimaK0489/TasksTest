@@ -14,7 +14,7 @@ export const Routes = () => {
                 <Route path={'/'} exact render={() => <Redirect to={PATH.START_PAGE}/>}/>
 
                 <Route path={PATH.START_PAGE} render={ () => <StartPage/>}/>
-                <Route path={PATH.USERS_PAGE} render={ () => <UsersPageContainer/>}/>
+                <Route path={PATH.USERS_PAGE} render={ () => <UsersPageContainer />}/>
             </Switch>
         </div>
     )

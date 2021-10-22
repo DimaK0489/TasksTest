@@ -1,4 +1,4 @@
-import style from './startPage.module.css'
+import style from './StartPage.module.css'
 
 
 export const StartPage = () => {

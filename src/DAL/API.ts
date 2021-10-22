@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export type     ResponseType = {
+export type ResponseType = {
     page: number
     per_page: number
     total: number

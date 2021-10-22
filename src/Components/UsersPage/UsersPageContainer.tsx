@@ -1,20 +1,26 @@
-import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../BLL/Store";
-import {getUsersTC} from "../../BLL/AppReducer";
+import {deleteUserAC, getUsersTC} from "../../BLL/AppReducer";
+import {useEffect} from "react";
 import {Users} from "./Users/Users";
+import {UsersDataType} from "../../DAL/API";
 
 export const UsersPageContainer = () => {
     const dispatch = useDispatch()
-    const users = useSelector<AppRootStateType, any>(state => state.app)
+    const users = useSelector<AppRootStateType, UsersDataType[]>(state => state.app)
 
     useEffect( () => {
         dispatch(getUsersTC())
     },[dispatch])
 
+    const deleteCallbackHandler = (id: number | string) => {
+        dispatch(deleteUserAC(id))
+    }
     return (
-        <Users
-            users={users}
-        />
+        <div>
+            <Users users={users}
+                   deleteUserCallback={deleteCallbackHandler}
+            />
+        </div>
     )
 }

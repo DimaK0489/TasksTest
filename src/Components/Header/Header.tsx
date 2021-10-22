@@ -1,4 +1,4 @@
-import style from "../StartPage/startPage.module.css";
+import style from "../StartPage/StartPage.module.css";
 import {NavLink} from "react-router-dom";
 import {PATH} from "../../Routes";
 
