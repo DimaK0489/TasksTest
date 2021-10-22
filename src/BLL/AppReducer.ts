@@ -17,16 +17,19 @@ export const appReducer = (state: InitialState = initState, action: ActionType):
     switch (action.type) {
         case ACTION_TYPE.GET_USERS:
             return action.users.data.map(u => u)
+        default:
+            return state
     }
+
 }
 
 //actions
-export const setUsersAC = (users: ResponseType) => ( {type: ACTION_TYPE.GET_USERS, users} as const)
+export const setUsersAC = (users: ResponseType) => ({type: ACTION_TYPE.GET_USERS, users} as const)
 
 //thunk
 export const getUsersTC = () => (dispatch: Dispatch) => {
     API.getUsers()
         .then((res) => {
-    dispatch(setUsersAC(res.data))
+            dispatch(setUsersAC(res.data))
         })
 }
