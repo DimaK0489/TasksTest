@@ -1,5 +1,6 @@
 import {Dispatch} from "redux";
 import {API, ResponseType, UsersDataType} from "../DAL/API";
+import {setAppStatusAC} from "./AppExpectationReducer";
 
 //types Action
 export type ActionType = SetUsersActionType | DeleteUserActionType
@@ -31,8 +32,10 @@ export const deleteUserAC = (id: number | string) => ({type: ACTION_TYPE.DELETE_
 
 //thunk
 export const getUsersTC = () => (dispatch: Dispatch) => {
+    dispatch(setAppStatusAC('loading'))
     API.getUsers()
         .then((res) => {
             dispatch(setUsersAC(res.data))
+            dispatch(setAppStatusAC('succeeded'))
         })
 }

@@ -3,8 +3,26 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    margin-top: 150px;
+    margin-top: 100px;
     border: 1px outset darkblue;
     font-size: 23px;
     font-family: "HoloLens MDL2 Assets", sans-serif;
+}
+
+.button__del {
+    text-decoration: none;
+    color: #0c2ae8;
+    display: inline-block;
+    position: relative;
+    padding: 3px 15px;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 10px 20px;
+    font-family: "Californian FB",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.button__del:hover {
+    background: rgba(255, 255, 255, 0);
 }

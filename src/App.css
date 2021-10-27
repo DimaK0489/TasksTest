@@ -7,7 +7,20 @@
     min-height: 100vh;
     background: linear-gradient(180deg, #b0e5cd 0%, #75e5cf 50%, #6ed970 100%);
 }
+.preLoader {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
 
+.preLoader img {
+    display: block;
+}
 
 
 

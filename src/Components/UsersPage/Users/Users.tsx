@@ -7,13 +7,18 @@ type UsersPropsType = {
 }
 
 export const Users = (props: UsersPropsType) => {
-    const deleteCallbackHandler = () => {
-        alert()
+    const deleteCallbackHandler = (id: string | number) => {
+        props.deleteUserCallback(id)
     }
     return (
         <div className={style.list__users}>
-            {props.users.map(u => <div>{u.first_name} {u.last_name} {u.email} </div>)}
-            <button onClick={deleteCallbackHandler}>Delete</button>
+            {
+                props.users.map(u =>
+                <div>
+                    {u.first_name} {u.last_name} {u.email}
+                    <button className={style.button__del} onClick={() => deleteCallbackHandler(u.id)}>Delete</button>
+                </div>)
+            }
         </div>
     )
 }
