@@ -9,16 +9,17 @@ export const UsersPageContainer = () => {
     const dispatch = useDispatch()
     const users = useSelector<AppRootStateType, UsersDataType[]>(state => state.app)
 
-    useEffect( () => {
+    useEffect(() => {
         dispatch(getUsersTC())
-    },[dispatch])
+    }, [dispatch])
 
     const deleteCallbackHandler = (id: number | string) => {
         dispatch(deleteUserAC(id))
     }
     return (
         <div>
-            <Users users={users}
+            <Users
+                   users={users}
                    deleteUserCallback={deleteCallbackHandler}
             />
         </div>

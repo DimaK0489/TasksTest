@@ -14,7 +14,7 @@ export const Users = (props: UsersPropsType) => {
         <div className={style.list__users}>
             {
                 props.users.map(u =>
-                <div>
+                <div key={u.id}>
                     {u.first_name} {u.last_name} {u.email}
                     <button className={style.button__del} onClick={() => deleteCallbackHandler(u.id)}>Delete</button>
                 </div>)
