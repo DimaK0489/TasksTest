@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../BLL/Store";
 import {setAppErrorAC} from "../../BLL/AppExpectationReducer";
 import React from "react";
+import style from './NotFoundPage.module.css'
 
 export const NotFoundPage = () => {
 
@@ -16,11 +17,11 @@ export const NotFoundPage = () => {
         dispatch(setAppErrorAC(null))
     }
     return (
-        <div>
+        <div className={style.error__page} >
             {error}
             <img src={'https://img.freepik.com/free-vector/404-error-with-character-error-design-template-website_114341-24.jpg?size=626&ext=jpg'}
                  alt={'pageNotFound'}/>
-            <p style={{textAlign:"center"}}>
+            <p>
                 <Link to="/"> Go to Home </Link>
             </p>
         </div>

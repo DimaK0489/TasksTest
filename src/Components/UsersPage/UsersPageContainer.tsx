@@ -4,6 +4,7 @@ import {deleteUserAC, getUsersTC} from "../../BLL/AppReducer";
 import {useEffect} from "react";
 import {Users} from "./Users/Users";
 import {UsersDataType} from "../../DAL/API";
+import {AddNewUser} from "../AddFormUser/AddUserForm";
 
 export const UsersPageContainer = () => {
     const dispatch = useDispatch()
@@ -22,6 +23,7 @@ export const UsersPageContainer = () => {
                    users={users}
                    deleteUserCallback={deleteCallbackHandler}
             />
+            <AddNewUser/>
         </div>
     )
 }

@@ -1,0 +1,36 @@
+.form_user {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 150px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid;
+    background-color: #949ee5;
+    color: black;
+    border-radius: 10px;
+}
+
+.input__enter {
+    background-color: #faeeee;
+    border-radius: 5px;
+}
+
+.input__enter:hover {
+    border: 2px solid gold;
+}
+.button__submit {
+    color: #d20919;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border-radius: 10px;
+    font-family: "Segoe UI", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-image: linear-gradient(to left, #28af27 0%, #a1e083 50%, #28af27 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+.button__submit:hover {
+    background-position: right center;
+}
