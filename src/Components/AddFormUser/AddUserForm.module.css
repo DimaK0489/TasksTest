@@ -1,6 +1,6 @@
 .form_user {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin: 20px 150px;
     padding: 10px;
     font-size: 1.2rem;

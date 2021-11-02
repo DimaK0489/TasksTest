@@ -18,13 +18,13 @@ export const AddNewUser = () => {
         validate: (values) => {
             const errors: any = {};
             if (!values.first_name) {
-                errors.first_name = 'Invalid data';
+                errors.first_name = "First_name should be filled";
             }
             if (!values.last_name) {
-                errors.last_name = "Invalid data"
+                errors.last_name = "Last_name should be filled"
             }
             if (!values.email) {
-                errors.email = "Invalid data"
+                errors.email = "Email is required"
             }
             return errors;
         },
@@ -36,6 +36,8 @@ export const AddNewUser = () => {
     return (
         <form className={style.form_user} onSubmit={formik.handleSubmit}>
             <label htmlFor="New User">New User:</label>
+            {formik.touched.first_name && <div style={{color: "red", textAlign: 'center'}}>{formik.errors.first_name}</div>}
+            {formik.touched.last_name && <div style={{color: "red", textAlign: 'center'}}>{formik.errors.last_name}</div>}
             {formik.touched.email && <div style={{color: "red", textAlign: 'center'}}>{formik.errors.email}</div>}
             <input
                 id="v1()"
