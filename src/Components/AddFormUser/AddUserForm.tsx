@@ -3,6 +3,7 @@ import {v1} from "uuid";
 import {useDispatch} from "react-redux";
 import {addUserAC} from "../../BLL/AppReducer";
 import style from './AddUserForm.module.css'
+import React from "react";
 
 export type FormikUserType = {
     id: string
@@ -11,7 +12,7 @@ export type FormikUserType = {
     email: string
 }
 
-export const AddNewUser = () => {
+export const AddNewUser = React.memo(() => {
     const dispatch = useDispatch()
     const formik = useFormik({
         initialValues: {id: v1(), first_name: '', last_name: '', email: ''},
@@ -39,6 +40,7 @@ export const AddNewUser = () => {
             {formik.touched.first_name && <div style={{color: "red", textAlign: 'center'}}>{formik.errors.first_name}</div>}
             {formik.touched.last_name && <div style={{color: "red", textAlign: 'center'}}>{formik.errors.last_name}</div>}
             {formik.touched.email && <div style={{color: "red", textAlign: 'center'}}>{formik.errors.email}</div>}
+
             <input
                 id="v1()"
                 placeholder={'first_name'}
@@ -61,4 +63,4 @@ export const AddNewUser = () => {
             <button className={style.button__submit} type="submit">Submit</button>
         </form>
     )
-}
+})

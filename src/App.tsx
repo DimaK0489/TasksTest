@@ -5,7 +5,6 @@ import {Routes} from "./Routes";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "./BLL/Store";
 import {Preloader} from './Components/Preloader/Preloader';
-import {NotFoundPage} from "./Components/NotFoundPage/NotFoundPage";
 
 function App() {
     const status = useSelector<AppRootStateType, string>(state => state.status.status)

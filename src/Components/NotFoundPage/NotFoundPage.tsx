@@ -5,7 +5,7 @@ import {setAppErrorAC} from "../../BLL/AppExpectationReducer";
 import React from "react";
 import style from './NotFoundPage.module.css'
 
-export const NotFoundPage = () => {
+export const NotFoundPage = React.memo(() => {
 
     const dispatch = useDispatch()
     const error = useSelector<AppRootStateType, null | string>(state => state.status.error)
@@ -26,4 +26,4 @@ export const NotFoundPage = () => {
             </p>
         </div>
     );
-}
+})

@@ -1,0 +1,4 @@
+.container__comp {
+    display: flex;
+    flex-direction: column;
+}

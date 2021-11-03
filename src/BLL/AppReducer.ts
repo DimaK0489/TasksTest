@@ -22,9 +22,10 @@ export const appReducer = (state: Array<UsersDataType> = initialState, action: A
         case ACTION_TYPE.GET_USERS:
             return action.users.data.map(u => u)
         case ACTION_TYPE.DELETE_USER:
-            return state.filter( (u => u.id !== action.id))
+            return state.filter((u => u.id !== action.id))
         case ACTION_TYPE.ADD_USER:
             return [...state, {...action.user}]
+
         default:
             return state
     }
